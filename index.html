@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/chat.css" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src='js/jquery.chatbox.js?test'></script>
+    <script src='js/chatbox_manager.js?test'></script>
+    <script src='js/connection.js'></script>
+    <script src='js/user_list_manager.js'></script>
+    <script src='js/chat_manager.js'></script>
+    <script>
+
+        $(document).ready(function () {
+            var chatManager = null;
+
+            $('#join').click(function (e) {
+                e.preventDefault();
+                // Create a user object. Just give some random value for user id.
+                var user = {screen_name: $('#me').val(), id: Date.now().toString()};
+                chatManager = new ChatManager(user);
+                $('#me').attr("disabled", "disabled");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type='text' id="me"/>
+    <button id='join'>Join</button>
+    <br>
+    <br>
+    <span style='font-weight:bold;'>Online Users</span><br>
+    <div id="membersList" class="membersList">
+
+    </div>
+</body>
+</html>
