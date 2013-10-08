@@ -10,5 +10,5 @@ How to run?
 - Ensure that the endpoint setting in chat_manager.js points to correct url.
 - Run the program **ruby chat.rb**
 - Open index.html in the multiple browsers and start chatting :)
-
-
+  
+  
